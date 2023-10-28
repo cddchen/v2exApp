@@ -1,0 +1,14 @@
+local.properties
+*.iml
+.idea/
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+**/build
+*/bin
+*/gradle
+.classpath
+app/build/
+.gradle/
+
+

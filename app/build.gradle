@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.sola.v2ex_android"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 2
+        versionName "1.1"
+        manifestPlaceholders = [CHANNEL_NAME: "MAIN"]
+        buildConfigField "boolean", "LOG_DEBUG", "false"
+        flavorDimensions "versionCode"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    signingConfigs {
+        config  {
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('/Users/cdd/Downloads/V2EX-Android/app/release.jks')
+            storePassword '123456'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    productFlavors {
+        _develop {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            manifestPlaceholders = [CHANNEL_NAME: "DEVELOP"]
+        }
+        _main {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            manifestPlaceholders = [CHANNEL_NAME: "MAIN"]
+        }
+    }
+
+//    android.applicationVariants.all { variant ->
+//        variant.outputs.each { output ->
+//            def outputFile = output.outputFile
+//            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//
+//                def fileName = outputFile.name.replace(".apk", "_" + defaultConfig.versionName + ".apk").replace("app-", "v2ex_").replaceAll("-", "_")
+//                output.outputFile = new File(outputFile.parent, fileName)
+//            }
+//        }
+//    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.rockerhieu:rv-adapter-endless:1.1'
+    implementation 'com.zzhoujay.richtext:richtext:3.0.8'
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    implementation 'io.reactivex:rxjava:1.1.5'
+    implementation 'io.reactivex:rxandroid:1.2.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    implementation 'org.jsoup:jsoup:1.10.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    implementation 'androidx.vectordrawable:vectordrawable:1.0.0'
+    testImplementation 'junit:junit:4.12'
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_left"
+        android:layout_width="0dp"
+        android:layout_height="78dp"
+        android:layout_marginRight="4dp"
+        android:padding="8dp"
+        android:background="@drawable/bg_corner__stroken_ffffff"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_node_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            tools:text="python"/>
+
+        <TextView
+            android:id="@+id/tv_topics_count_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:textSize="12dp"
+            android:textColor="#666666"
+            android:layout_alignBottom="@id/tv_node_title_left"
+            tools:text="帖子 1006"
+            android:layout_toRightOf="@id/tv_node_title_left"
+            />
+
+        <TextView
+            android:id="@+id/tv_header_left"
+            android:layout_below="@id/tv_node_title_left"
+            android:layout_marginTop="4dp"
+            tools:text="一个更好的世界需要你持续地提出好问题"
+            android:textColor="#999999"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_right"
+        android:layout_width="0dp"
+        android:layout_height="78dp"
+        android:layout_marginRight="4dp"
+        android:padding="8dp"
+        android:background="@drawable/bg_corner__stroken_ffffff"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_node_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            tools:text="python"
+            />
+
+        <TextView
+            android:id="@+id/tv_topics_count_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:textSize="12dp"
+            android:layout_alignBottom="@id/tv_node_title_right"
+            tools:text="帖子 1006"
+            android:textColor="#666666"
+            android:layout_toRightOf="@id/tv_node_title_right"
+            />
+
+        <TextView
+            android:id="@+id/tv_header_right"
+            android:layout_below="@id/tv_node_title_right"
+            tools:text="一个更好的世界需要你持续地提出好问题"
+            android:textColor="#999999"
+            android:layout_marginTop="4dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
